@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Description>This package is used to collects foreign currency informations for Turkish currency from the CBRT (TCMB) XML Web site.</Description>
+    <Company>Kursat Sonmez</Company>
+    <Authors>Kursat Sonmez</Authors>
+    <Version>1.0.0-rc.5</Version>
+    <PackageId>ExchangeRateFactory.Factory</PackageId>
+    <PackageTags>turkishlira lira turkishexchangerate turkishforeigncurrency turkishforeignexchange</PackageTags>
+    <Copyright>Kursat Sonmez</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.10" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExchangeRateFactory.Common\ExchangeRateFactory.Common.csproj" />
+    <ProjectReference Include="..\ExchangeRateFactory.Data\ExchangeRateFactory.Data.csproj" />
+  </ItemGroup>
+
+</Project>

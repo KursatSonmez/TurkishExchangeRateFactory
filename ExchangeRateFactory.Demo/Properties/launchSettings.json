@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ExchangeRateFactory.Demo": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development",
+        "ExchangeRateFactory_Skip_WorkingHour": "True"
+      },
+      "dotnetRunMessages": "true"
+    }
+  }
+}

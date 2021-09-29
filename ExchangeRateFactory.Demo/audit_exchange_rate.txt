@@ -1,0 +1,1 @@
+﻿{"AuditDate":"2021-09-29T16:14:58.6068047+03:00","D":"2021-09-29T16:14:57.8350649+03:00","T":"Daily","S":"Success","M":"21 adet veri BAŞARIYLA kaydedildi."}

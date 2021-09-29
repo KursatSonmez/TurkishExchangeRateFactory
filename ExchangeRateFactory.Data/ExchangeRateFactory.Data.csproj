@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Description>This package is used to collects foreign currency informations for Turkish currency from the CBRT (TCMB) XML Web site.</Description>
+    <Authors>Kursat Sonmez</Authors>
+    <Company>Kursat Sonmez</Company>
+    <PackageTags>turkish lira, turkish exchange rate, turkish foreign currency, turkish foregin exchange</PackageTags>
+    <Copyright>Kursat Sonmez</Copyright>
+    <Version>1.0.0-rc.4</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Mapping\" />
+  </ItemGroup>
+
+</Project>
