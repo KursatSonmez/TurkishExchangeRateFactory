@@ -1,5 +1,5 @@
-﻿using ExchangeRateFactory.Demo.Data.DataContext;
-using ExchangeRateFactory.Demo.Data.Entities;
+﻿using ExchangeRateFactory.Demo.Customize.DataContext;
+using ExchangeRateFactory.Demo.Customize.Entities;
 using ExchangeRateFactory.Factory.Services.Internal.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;

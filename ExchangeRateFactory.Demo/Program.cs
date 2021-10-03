@@ -1,11 +1,9 @@
-using ExchangeRateFactory.Demo.Data.DataContext;
-using ExchangeRateFactory.Demo.Data.Entities;
-using ExchangeRateFactory.Worker.Public.DependencyInjection;
+using ExchangeRateFactory.Demo.Customize.DataContext;
+using ExchangeRateFactory.Demo.Customize.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
 using System.Threading.Tasks;
 
 namespace ExchangeRateFactory.Demo
@@ -50,7 +48,7 @@ namespace ExchangeRateFactory.Demo
 
             var workingHour = hostContext.Configuration["WorkingHour"];
 
-            services.UseExchangeRateFactoryWorker<ExchangeRateFactoryDbContext, ExchangeRate, Guid>(x =>
+            services.UseExchangeRates<ExchangeRateFactoryDbContext>(x =>
             {
                 if (string.IsNullOrWhiteSpace(workingHour) == false)
                     x.WorkingHour = workingHour;

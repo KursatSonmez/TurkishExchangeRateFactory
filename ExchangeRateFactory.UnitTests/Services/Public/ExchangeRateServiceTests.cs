@@ -1,4 +1,4 @@
-﻿using ExchangeRateFactory.Demo.Data.Entities;
+﻿using ExchangeRateFactory.Demo.Customize.Entities;
 using ExchangeRateFactory.Factory.Services.Public;
 using ExchangeRateFactory.UnitTests.Base;
 using System;
