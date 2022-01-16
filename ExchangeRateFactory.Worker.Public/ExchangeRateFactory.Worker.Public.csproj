@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <Description>This package is used to collects foreign currency informations for Turkish currency from the CBRT (TCMB) XML Web site.</Description>
+    <Description>This package is used to collect foreign currency informations for Turkish currency from the CBRT (TCMB) XML Web site.</Description>
     <Copyright>Kursat Sonmez</Copyright>
     <Company></Company>
     <Product>ExchangeRateFactory.Worker.Public</Product>
@@ -11,6 +11,9 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Version>1.0.0-rc.6</Version>
+    <RepositoryUrl>https://github.com/KursatSonmez/TurkishExchangeRateFactory</RepositoryUrl>
+    <PackageId>ExchangeRateFactory.Worker.Public</PackageId>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
