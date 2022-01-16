@@ -1,12 +1,12 @@
 # Turkish Lira Exchange Rate Factory
-This library is used to collects and automatically save to database foreign currency informations for the Turkish Lira from the CBRT (TCMB) XML Web site.
+This library is used to collect and automatically save to database foreign currency informations for the Turkish Lira from the CBRT (TCMB) XML Web site.
 The system runs as a background service.
 
 ## Description
 
-The system will start collects to data from CBRT at a certain time of day and then save those data to the database.
-First, the system checks the working hour. If the system hour equal to the `WorkingHour`, the system will start reading the data of that day and save those to the database.
-(Default `WorkingHour` value is `00`. You can review the [appsettings.Development.json file in ExchangeRateFactory.Demo](ExchangeRateFactory.Demo/appsettings.Development.json) for change.)
+System will start to collect data from CBRT at a certain time of day and then save those data to the database.
+First, system checks working hour. If the system hour is equal to the `WorkingHour`, the system will start reading the data of that day and save those to the database.
+(Default `WorkingHour` value is `00`. You can review the [appsettings.Development.json file in ExchangeRateFactory.Demo](ExchangeRateFactory.Demo/appsettings.Development.json) for changes.)
 
 
 ## Quick Start
