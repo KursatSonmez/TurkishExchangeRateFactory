@@ -5,9 +5,11 @@
     <Version>1.0.0-rc</Version>
     <Company>Kursat Sonmez</Company>
     <Authors>Kursat Sonmez</Authors>
-    <Description>This package is used to collects foreign currency informations for Turkish currency from the CBRT (TCMB) XML Web site.</Description>
+    <Description>This package is used to collect foreign currency informations for Turkish currency from the CBRT (TCMB) XML Web site.</Description>
     <Copyright>Kursat Sonmez</Copyright>
     <PackageTags>turkishlira lira turkishexchangerate turkishforeigncurrency turkishforeignexchange</PackageTags>
+    <RepositoryUrl>https://github.com/KursatSonmez/TurkishExchangeRateFactory</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
