@@ -10,7 +10,7 @@
     <PackageTags>turkishlira lira turkishexchangerate turkishforeigncurrency turkishforeignexchange</PackageTags>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Version>1.0.0-rc.8</Version>
+    <Version>1.0.0-rc.9</Version>
     <RepositoryUrl>https://github.com/KursatSonmez/TurkishExchangeRateFactory</RepositoryUrl>
     <PackageId>ExchangeRateFactory.Worker.Public</PackageId>
     <RepositoryType>git</RepositoryType>
@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExchangeRateFactory.Data\ExchangeRateFactory.Data.csproj" PrivateAssets="All"/>
+    <ProjectReference Include="..\ExchangeRateFactory.Data\ExchangeRateFactory.Data.csproj" PrivateAssets="All" />
     <ProjectReference Include="..\ExchangeRateFactory.Factory\ExchangeRateFactory.Factory.csproj" PrivateAssets="All" />
     <!-- PrivateAssets="all"-->
   </ItemGroup>
@@ -39,7 +39,7 @@ https://github.com/teroneko/Teronis.DotNet/tree/develop/src/MSBuild/Packaging/Pr
   <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="BuildOnlySettings;ResolveReferences">
     <ItemGroup>
       <!-- Filter out unnecessary files -->
-      <_ReferenceCopyLocalPaths Include="@(ReferenceCopyLocalPaths->WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')->WithMetadataValue('PrivateAssets', 'All'))"/>
+      <_ReferenceCopyLocalPaths Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')-&gt;WithMetadataValue('PrivateAssets', 'All'))" />
     </ItemGroup>
 
     <!-- Print batches for debug purposes -->
@@ -47,7 +47,7 @@ https://github.com/teroneko/Teronis.DotNet/tree/develop/src/MSBuild/Packaging/Pr
 
     <ItemGroup>
       <!-- Add file to package with consideration of sub folder. If empty, the root folder is chosen. -->
-      <BuildOutputInPackage Include="@(_ReferenceCopyLocalPaths)" TargetPath="%(_ReferenceCopyLocalPaths.DestinationSubDirectory)"/>
+      <BuildOutputInPackage Include="@(_ReferenceCopyLocalPaths)" TargetPath="%(_ReferenceCopyLocalPaths.DestinationSubDirectory)" />
     </ItemGroup>
   </Target>
 
