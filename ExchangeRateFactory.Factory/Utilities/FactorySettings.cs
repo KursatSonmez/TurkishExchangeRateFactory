@@ -43,15 +43,18 @@ namespace ExchangeRateFactory.Factory.Utilities
         }
 
         public static FactorySettings LoadDefaultValues()
-             => new()
-             {
-                 AuditFileName = "audit_exchange_rate.txt",
+        {
+            var assemblyLocation = System.Reflection.Assembly.GetEntryAssembly().Location;
+            return new()
+            {
+                AuditFileName = "audit_exchange_rate.txt",
 
-                 AuditFilePath = Path.Combine(Directory.GetCurrentDirectory(), "audit_exchange_rate.txt"),
+                AuditFilePath = Path.Combine(Path.GetDirectoryName(assemblyLocation), "audit_exchange_rate.txt"),
 
-                 AuditIsActive = true,
+                AuditIsActive = true,
 
-                 WorkingHour = "00",
-             };
+                WorkingHour = "00",
+            };
+        }
     }
 }
