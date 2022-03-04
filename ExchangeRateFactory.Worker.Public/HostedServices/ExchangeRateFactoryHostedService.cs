@@ -1,4 +1,5 @@
 ﻿using ExchangeRateFactory.Data.Entities;
+using ExchangeRateFactory.Factory.Utilities.Interfaces;
 using ExchangeRateFactory.Worker.Public.Workers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,14 +20,17 @@ namespace ExchangeRateFactory.Worker.Public.HostedServices
 
         public ExchangeRateFactoryHostedService(
             ILogger<ExchangeRateFactoryHostedService<T, PK>> logger,
+            IFactorySettings factorySettings,
             IServiceProvider serviceProvider
             )
         {
             _logger = logger;
             Services = serviceProvider;
+            FactorySettings = factorySettings;
         }
 
         public readonly IServiceProvider Services;
+        protected readonly IFactorySettings FactorySettings;
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
@@ -39,7 +43,7 @@ namespace ExchangeRateFactory.Worker.Public.HostedServices
                 },
                 null,
                 TimeSpan.Zero,
-                TimeSpan.FromHours(1)
+                FactorySettings.TimerPeriod
                 );
 
             return Task.CompletedTask;

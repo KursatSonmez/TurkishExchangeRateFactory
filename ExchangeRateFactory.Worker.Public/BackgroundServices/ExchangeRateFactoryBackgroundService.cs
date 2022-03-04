@@ -1,4 +1,5 @@
 ﻿using ExchangeRateFactory.Data.Entities;
+using ExchangeRateFactory.Factory.Utilities.Interfaces;
 using ExchangeRateFactory.Worker.Public.Workers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -16,14 +17,17 @@ namespace ExchangeRateFactory.Worker.Public.BackgroundServices
         private readonly ILogger<ExchangeRateFactoryBackgroundService<T, PK>> _logger;
         public ExchangeRateFactoryBackgroundService(
             ILogger<ExchangeRateFactoryBackgroundService<T, PK>> logger,
+            IFactorySettings factorySettings,
             IServiceProvider serviceProvider
             )
         {
             _logger = logger;
             Services = serviceProvider;
+            FactorySettings = factorySettings;
         }
 
         public readonly IServiceProvider Services;
+        protected readonly IFactorySettings FactorySettings;
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
@@ -40,7 +44,7 @@ namespace ExchangeRateFactory.Worker.Public.BackgroundServices
                     _logger.LogError(ex, "");
                 }
 
-                await Task.Delay(TimeSpan.FromMinutes(5), stoppingToken);
+                await Task.Delay(FactorySettings.TimerPeriod, stoppingToken);
             }
         }
 

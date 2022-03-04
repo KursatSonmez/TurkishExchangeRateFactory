@@ -1,4 +1,6 @@
-﻿namespace ExchangeRateFactory.Factory.Utilities.Interfaces
+﻿using System;
+
+namespace ExchangeRateFactory.Factory.Utilities.Interfaces
 {
     public interface IFactorySettings
     {
@@ -32,5 +34,12 @@
         /// Varsayılan: 00
         /// </summary>
         string WorkingHour { get; set; }
+
+        /// <summary>
+        /// Servisin hangi zaman aralığında çalışacağını temsil eder.
+        /// 
+        /// Varsayılan: 30 Dakikada bir çalıştırılır.
+        /// </summary>
+        TimeSpan TimerPeriod { get; set; }
     }
 }
