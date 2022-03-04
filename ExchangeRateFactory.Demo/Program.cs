@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 using System.Threading.Tasks;
 
 namespace ExchangeRateFactory.Demo
@@ -52,9 +53,11 @@ namespace ExchangeRateFactory.Demo
             {
                 if (string.IsNullOrWhiteSpace(workingHour) == false)
                     x.WorkingHour = workingHour;
+                x.TimerPeriod = TimeSpan.FromMinutes(10);
                 //x.AuditIsActive = false;
                 return x;
-            });
+            })
+                .AddExchangeRateBackgroundService<ExchangeRateFactoryDbContext>();
 
             return services;
         }

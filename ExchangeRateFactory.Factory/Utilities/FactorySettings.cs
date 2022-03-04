@@ -42,6 +42,8 @@ namespace ExchangeRateFactory.Factory.Utilities
             }
         }
 
+        public TimeSpan TimerPeriod { get; set; }
+
         public static FactorySettings LoadDefaultValues()
         {
             var assemblyLocation = System.Reflection.Assembly.GetEntryAssembly().Location;
@@ -54,6 +56,8 @@ namespace ExchangeRateFactory.Factory.Utilities
                 AuditIsActive = true,
 
                 WorkingHour = "00",
+
+                TimerPeriod = TimeSpan.FromMinutes(30),
             };
         }
     }

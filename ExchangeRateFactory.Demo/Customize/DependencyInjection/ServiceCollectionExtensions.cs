@@ -17,5 +17,13 @@ namespace ExchangeRateFactory.Demo.Customize.DependencyInjection
             return ExchangeRateFactory.Worker.Public.DependencyInjection.ServiceCollectionExtensions
                 .UseExchangeRateFactoryWorker<TContext, ExchangeRate, Guid>(services, settings);
         }
+        public static IServiceCollection AddExchangeRateBackgroundService<TContext>(this IServiceCollection services)
+            where TContext : IExchangeRateFactoryDbContext
+        {
+            ExchangeRateFactory.Worker.Public.DependencyInjection.ServiceCollectionExtensions
+                   .AddExchangeRateFactoryBackgroundService<TContext, ExchangeRate, Guid>(services);
+
+            return services;
+        }
     }
 }
