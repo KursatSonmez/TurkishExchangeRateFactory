@@ -10,7 +10,7 @@
     <PackageTags>turkishlira lira turkishexchangerate turkishforeigncurrency turkishforeignexchange</PackageTags>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Version>1.0.0-rc.8</Version>
+    <Version>1.0.0-rc.9</Version>
     <RepositoryUrl>https://github.com/KursatSonmez/TurkishExchangeRateFactory</RepositoryUrl>
     <PackageId>ExchangeRateFactory.Worker.Public</PackageId>
     <RepositoryType>git</RepositoryType>
@@ -21,33 +21,34 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExchangeRateFactory.Factory\ExchangeRateFactory.Factory.csproj" />
+    <ProjectReference Include="..\ExchangeRateFactory.Data\ExchangeRateFactory.Data.csproj" PrivateAssets="All" />
+    <ProjectReference Include="..\ExchangeRateFactory.Factory\ExchangeRateFactory.Factory.csproj" PrivateAssets="All" />
     <!-- PrivateAssets="all"-->
   </ItemGroup>
 
-  <!--
-Include all dependencies using dotnet pack ->
+  <!-- Include all dependencies using dotnet pack
+  
 https://stackoverflow.com/a/59893520/6393893
 https://github.com/teroneko/Teronis.DotNet/tree/develop/src/MSBuild/Packaging/ProjectBuildInPackage
+  -->
 
   <PropertyGroup>
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
   </PropertyGroup>
 
-
   <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="BuildOnlySettings;ResolveReferences">
     <ItemGroup>
-      <!- - Filter out unnecessary files - ->
-      <_ReferenceCopyLocalPaths Include="@(ReferenceCopyLocalPaths->WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')->WithMetadataValue('PrivateAssets', 'All'))"/>
+      <!-- Filter out unnecessary files -->
+      <_ReferenceCopyLocalPaths Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')-&gt;WithMetadataValue('PrivateAssets', 'All'))" />
     </ItemGroup>
 
-    <!- - Print batches for debug purposes - ->
+    <!-- Print batches for debug purposes -->
     <Message Text="Batch for .nupkg: ReferenceCopyLocalPaths = @(_ReferenceCopyLocalPaths), ReferenceCopyLocalPaths.DestinationSubDirectory = %(_ReferenceCopyLocalPaths.DestinationSubDirectory) Filename = %(_ReferenceCopyLocalPaths.Filename) Extension = %(_ReferenceCopyLocalPaths.Extension)" Importance="High" Condition="'@(_ReferenceCopyLocalPaths)' != ''" />
 
     <ItemGroup>
-      <!- - Add file to package with consideration of sub folder. If empty, the root folder is chosen. - ->
-      <BuildOutputInPackage Include="@(_ReferenceCopyLocalPaths)" TargetPath="%(_ReferenceCopyLocalPaths.DestinationSubDirectory)"/>
+      <!-- Add file to package with consideration of sub folder. If empty, the root folder is chosen. -->
+      <BuildOutputInPackage Include="@(_ReferenceCopyLocalPaths)" TargetPath="%(_ReferenceCopyLocalPaths.DestinationSubDirectory)" />
     </ItemGroup>
   </Target>
--->
+
 </Project>

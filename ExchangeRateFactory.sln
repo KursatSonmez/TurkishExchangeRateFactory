@@ -29,7 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{61258915-5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRateFactory.SimpleDemo", "ExchangeRateFactory.SimpleDemo\ExchangeRateFactory.SimpleDemo.csproj", "{8E01C3FB-5ED1-4EAA-AB50-6E5AD0464FAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRateFactory.SimpleDemoWorkerService", "ExchangeRateFactory.SimpleDemoWorkerService\ExchangeRateFactory.SimpleDemoWorkerService.csproj", "{B467BA14-8E77-47E1-93FD-86EEF00A9EA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRateFactory.SimpleDemoWorkerService", "ExchangeRateFactory.SimpleDemoWorkerService\ExchangeRateFactory.SimpleDemoWorkerService.csproj", "{B467BA14-8E77-47E1-93FD-86EEF00A9EA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
