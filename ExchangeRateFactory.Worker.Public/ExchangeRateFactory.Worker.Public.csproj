@@ -10,7 +10,7 @@
     <PackageTags>turkishlira lira turkishexchangerate turkishforeigncurrency turkishforeignexchange</PackageTags>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Version>1.0.0-rc.9</Version>
+    <Version>1.0.0-rc.10</Version>
     <RepositoryUrl>https://github.com/KursatSonmez/TurkishExchangeRateFactory</RepositoryUrl>
     <PackageId>ExchangeRateFactory.Worker.Public</PackageId>
     <RepositoryType>git</RepositoryType>
@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ExchangeRateFactory.Common\ExchangeRateFactory.Common.csproj" PrivateAssets="All" />
     <ProjectReference Include="..\ExchangeRateFactory.Data\ExchangeRateFactory.Data.csproj" PrivateAssets="All" />
     <ProjectReference Include="..\ExchangeRateFactory.Factory\ExchangeRateFactory.Factory.csproj" PrivateAssets="All" />
     <!-- PrivateAssets="all"-->
